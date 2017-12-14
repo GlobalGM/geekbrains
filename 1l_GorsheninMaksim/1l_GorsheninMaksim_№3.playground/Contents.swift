@@ -10,6 +10,7 @@ let summa: Float = 800
 let year: Float = 5
 
 // Расчет
-let totalYearProcent = summa*(1+year*(procent/100))
+let procentGod = 1 + (procent/100)
+let totalYearProcent = summa*pow(procentGod, year)
 
-print("Если на 5 лет положить \n- сумму равную \(summa) руб. \n- под процент равный \(procent)% \n\nКлиент получит сумму равную \(totalYearProcent) руб.")
+print("Если на 5 лет положить \n\n- сумму равную \(summa) руб. \n- под процент равный \(procent)% \n\nКлиент получит сумму равную \(totalYearProcent) руб.")
