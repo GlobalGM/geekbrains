@@ -10,6 +10,9 @@ enum Transmission {
     case manual, auto
 }
 
+
+
+
 class Car {
     var model = ""
     var year: Int
@@ -53,8 +56,23 @@ class truckCar: Car {
         self.trailer = trailer
         super.init("BMW Truck", 2000, scope: 0, transmission: .manual, windowsState: .close, mp3: true)
     }
+    //Функция отцепляет цестерну у грузовика
+    func openTrailer() {
+        print("Мы нажали на кнопку отцепить цестерну")
+        self.trailer = false
+    }
+    //Функция закрепляющая цестерну
+    func closeTrailer() {
+        print("Мы нажали на кнопку закрепить цестерну")
+        self.trailer = true
+    }
 }
 
 print("Создаем спортивный автомобиль truckCar1")
 let truckCar1 = truckCar (trailer: true)
 print("Количество выпущенных автомобилей: \(Car.carCount)\n")
+
+print("Нажимаем на кнопку оцепить цестерну")
+truckCar1.openTrailer()
+print ("Наличие закрепленной цестерны \(truckCar1.trailer)")
+
